@@ -1,32 +1,6 @@
-# pyKT
+# TransKT: A Transferable Knowledge Tracing Framework for Interdisciplinary Adaptation
 
-[![Downloads](https://pepy.tech/badge/pykt-toolkit)](https://pepy.tech/project/pykt-toolkit)
-[![GitHub Issues](https://img.shields.io/github/issues/pykt-team/pykt-toolkit.svg)](https://github.com/pykt-team/pykt-toolkit/issues)
-[![Documentation](https://img.shields.io/website/http/pykt-team.github.io/index.html?down_color=red&down_message=offline&up_message=online)](https://pykt.org/)
-
-pyKT is a python library build upon PyTorch to train deep learning based knowledge tracing models. The library consists of a standardized set of integrated data preprocessing procedures on more than 7 popular datasets across different domains, 5 detailed prediction scenarios, more than 10 frequently compared DLKT approaches for transparent and extensive experiments. More details about pyKT can see our [website](https://pykt.org/) and [docs](https://pykt-toolkit.readthedocs.io/en/latest/quick_start.html).
-
-
-
-
-## Installation
-Use the following command to install pyKT:
-
-Create conda envirment.
-
-```
-conda create --name=pykt python=3.7.5
-source activate pykt
-```
-
-
-```
-pip install -U pykt-toolkit -i  https://pypi.python.org/simple 
-
-```
-
-## Hyper parameter tunning results
-The hyper parameter tunning results of our experiments about all the DLKT models on various datasets can be found at https://drive.google.com/drive/folders/1MWYXj73Ke3zC6bm3enu1gxQQKAHb37hz?usp=drive_link.
+The cross-domain generalization of existing Knowledge Tracing (KT) models is challenged by the heterogeneity in students’ cognitive abilities and divergent domain-specific knowledge structures. To mitigate this limitation, we propose TransKT, a transferable KT framework designed for interdisciplinary adaptation. TransKT enhances existing KT models by dynamically aligning student representations and integrating external knowledge semantics. Specifically, the framework incorporates an Interdisciplinary Graph Matching (IGM) module, which constructs subject-aware graphs from student learning trajectories and employs graph attention networks coupled with contrastive learning to capture meta-skill representations. Through cross-domain node matching, IGM aligns student-specific features to improve tracing accuracy. Additionally, an Interdisciplinary Attention-Assisted (IAA) module leverages pretrained language models to extract semantic meta-knowledge from textual content, which is fused with the original input via a multimodal attention mechanism to strengthen transferability. Extensive experiments show that TransKT consistently improves seven main stream KT models (e.g., SAKT) under direct transfer settings on the ASSIST2015 and DBE-KT22 datasets, with average gains of 14.2% in ACC and 4.5% in AUC. These results validate the effectiveness of our approach in facilitating cross-disciplinary knowledge tracing transfer. 
 
 ## References
 ### Projects
@@ -82,16 +56,3 @@ The hyper parameter tunning results of our experiments about all the DLKT models
 28. UKT: Uncertainty-aware Knowledge Tracing
 29. HCGKT: Hierarchical Contrastive Graph Knowledge Tracing with Multi-level Feature Learning
 30. RobustKT: Enhancing Knowledge Tracing through Decoupling Cognitive Pattern from Error-Prone Data
-
-## Citation
-
-We now have a [paper](https://arxiv.org/abs/2206.11460?context=cs.CY) you can cite for the our pyKT library:
-
-```bibtex
-@inproceedings{liupykt2022,
-  title={pyKT: A Python Library to Benchmark Deep Learning based Knowledge Tracing Models},
-  author={Liu, Zitao and Liu, Qiongqiong and Chen, Jiahao and Huang, Shuyan and Tang, Jiliang and Luo, Weiqi},
-  booktitle={Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-  year={2022}
-}
-```
